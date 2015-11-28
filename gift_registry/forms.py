@@ -7,6 +7,7 @@ class GiverForm(forms.ModelForm):
 
     class Meta:
         model = Giver
+        fields = '__all__'
 
         widgets = {
             'gift': forms.HiddenInput,

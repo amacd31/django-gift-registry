@@ -47,6 +47,9 @@ class Gift(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.title
+
     @models.permalink
     def get_absolute_url(self):
         return ('gift_registry.views.detail', [self.id])
@@ -75,8 +78,7 @@ class Giver(models.Model):
         Based on Django settings SECRET_KEY. Perhaps it should take an
         additional parameter such as the app name and class name so its not
         the same for the same pk between classes."""
-        URL_SIGNATURE_LENGTH = 7 # 268M possible combinations
-        return sha1(str(self.pk) + settings.SECRET_KEY).hexdigest()[:URL_SIGNATURE_LENGTH]
+        return sha1(str(self.pk).encode('utf-8') + settings.SECRET_KEY.encode('utf-8')).hexdigest()
 
     def email_confirmation(self):
         body = wrap(render_to_string('gift_registry/email_thanks.txt',

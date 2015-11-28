@@ -33,6 +33,5 @@ setup(
 
     install_requires=[
         "Django >= 1.6",
-        "PIL == 1.1.7",
     ],
 )
