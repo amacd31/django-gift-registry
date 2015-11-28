@@ -8,7 +8,7 @@ setup(
     cmdclass=versioneer.get_cmdclass(),
     description='A minimal wedding registry or gift registry app.',
     long_description=open('README').read(),
-    url='https://launchpad.net/django-gift-registry',
+    url='https://github.com/amacd31/django-gift-registry',
 
     author='Ben Sturmfels',
     author_email='ben@sturm.com.au',
