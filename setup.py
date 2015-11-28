@@ -1,8 +1,11 @@
 from setuptools import setup
+import versioneer
+
 
 setup(
     name='django-gift-registry',
-    version='0.4.0',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='A minimal wedding registry or gift registry app.',
     long_description=open('README').read(),
     url='https://launchpad.net/django-gift-registry',
