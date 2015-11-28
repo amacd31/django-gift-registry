@@ -1,0 +1,15 @@
+{% autoescape off %}Thanks for choosing a gift! You chose:
+
+======================================================================
+{{ gift }}
+
+{{ gift.desc }}{% if gift.url %}
+
+{{ gift.url }}{% endif %}
+======================================================================
+
+{% if gift.one_only %}This is a "one only" type gift, so has been automatically crossed off the list.{% else %}We're happy for more than one person to choose this gift, so note that it won't be crossed off the list.{% endif %}
+
+If you change your mind, use this link to cancel your choice:
+http://{{ site.domain }}{% url "gift_registry.views.cancel" giver.id giver.secret_key %}
+{% endautoescape %}

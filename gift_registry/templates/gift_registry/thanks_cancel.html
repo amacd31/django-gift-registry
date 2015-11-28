@@ -1,0 +1,8 @@
+{% extends "gift_registry/base.html" %}
+
+{% block main_content %}
+<h1>Your choice has been cancelled</h1>
+<p>We've updated the list so you're welcome to choose again if you'd like.</p>
+
+<p><a href="{% url "gift_list" %}"><span style="font-size: 1.5em">⬅</span> Return to list</a></p>
+{% endblock %}

@@ -1,0 +1,4 @@
+recursive-include gift_registry/templates *
+recursive-include gift_registry/static *
+recursive-include gift_registry/fixtures *
+recursive-include docs *

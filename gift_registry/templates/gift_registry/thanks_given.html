@@ -1,0 +1,8 @@
+{% extends "gift_registry/base.html" %}
+
+{% block main_content %}
+<h1>Thanks for choosing a gift!</h1>
+<p>We've sent you an email to confirm your choice.</p>
+
+<p><a href="{% url "gift_list" %}"><span style="font-size: 1.5em">⬅</span> Return to list</a></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+[
+{
+  "pk": 1, 
+  "model": "gift_registry.gift", 
+  "fields": {
+    "one_only": true, 
+    "title": "Toaster", 
+    "url": "http://www.example.com/", 
+    "image": "gift_registry/images/_A2F5767_1.jpg", 
+    "live": true, 
+    "desc": "Something to burn bread."
+  }
+}
+]

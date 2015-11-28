@@ -1,0 +1,16 @@
+{% extends "gift_registry/base.html" %}
+
+{% block main_content %}
+<p>You don't need to get us a gift. Truly, we'll be thrilled just to see you! If you still want to give us something though, here are a few ideas.</p>
+
+<p><em>Select an item for more details.</em></p>
+
+<ul>
+{% for gift in object_list %}
+{% if gift.bookable %}<li>{% else %}<li class="booked">{% endif %}
+<a href="{{ gift.get_absolute_url }}">{{ gift }}</a>{% if gift.count_givers > 0 %} <span class="tally">({{ gift.count_givers }} chosen)</span>{% endif %}</li>
+{% empty %}
+<li>Sorry, no gifts are available</li>
+{% endfor %}
+</ul>
+{% endblock %}
