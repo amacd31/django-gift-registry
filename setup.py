@@ -7,7 +7,7 @@ setup(
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description='A minimal wedding registry or gift registry app.',
-    long_description=open('README').read(),
+    long_description=open('README.rst').read(),
     url='https://github.com/amacd31/django-gift-registry',
 
     author='Ben Sturmfels',
