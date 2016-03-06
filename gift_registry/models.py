@@ -80,17 +80,19 @@ class Giver(models.Model):
         the same for the same pk between classes."""
         return sha1(str(self.pk).encode('utf-8') + settings.SECRET_KEY.encode('utf-8')).hexdigest()
 
-    def email_confirmation(self):
+    def email_confirmation(self, email):
         body = wrap(render_to_string('gift_registry/email_thanks.txt',
                                      {'gift': self.gift,
                                       'giver': self,
                                       'site': Site.objects.get_current()}), 70)
         send_mail(
             settings.GIFT_REGISTRY_SETTINGS['EVENT_NAME'], body,
-            settings.DEFAULT_FROM_EMAIL, [self.email], fail_silently=False)
+            settings.DEFAULT_FROM_EMAIL, [email], fail_silently=False)
 
     def save(self, *args, **kwargs):
         create = True if not self.pk else False
+        email = self.email
+        self.email = sha1(self.email).hexdigest()
         super(Giver, self).save(*args, **kwargs)
         if create:
-            self.email_confirmation()
+            self.email_confirmation(email)
