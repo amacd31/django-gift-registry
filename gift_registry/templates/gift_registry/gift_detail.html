@@ -7,8 +7,6 @@
 <h1>{{ object }}</h1>
 <p>{% if object.image %}
 <img src="{{ MEDIA_URL }}{{ object.image }}" alt="" />
-{% else %}
-<img src="{{ STATIC_URL}}gift_registry/img/gold-present.jpg" alt="" />
 {% endif %}</p>
 
 <p style="text-align: center">{{ object.desc }}</p>
